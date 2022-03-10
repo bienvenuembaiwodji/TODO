@@ -6,7 +6,7 @@ Il s'agit d'un referentiel d'exercice pour l'application TODO qui fait fait part
 Etape 1: Cloner le dépôt
 
 ```
-git colne https://github.com/bienvenuembaiwodji/TODO.git
+git clone https://github.com/bienvenuembaiwodji/TODO.git
 ```
 
 
