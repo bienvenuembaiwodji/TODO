@@ -3,4 +3,4 @@ Il s'agit d'un referentiel d'exercice pour l'application TODO qui fait fait part
 
 # Comment utiliser ce référentiel
 
-##Etape 1: Cloner le dépôt
+  #Etape 1: Cloner le dépôt
