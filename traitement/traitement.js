@@ -30,15 +30,18 @@ const getTasks = JSON.stringify(tasks);
  */
  const setupData = function(){
     const path = './donnees/data.json'
-
+    var dir = './donnees';
     try {
         if (fs.existsSync(path)) {
             //console.log('data file exists!');
             
         }else{
-            console.log('data file not exists, create it!');
-            fs.writeFileSync('./donnees/data.json', getTasks);
             
+            if (!fs.existsSync(dir)){
+                fs.mkdirSync(dir);
+                console.log('data file not exists, create it!');
+                fs.writeFileSync('./donnees/data.json', getTasks);
+            }
         }
     } catch(err) {
         console.error(err)
