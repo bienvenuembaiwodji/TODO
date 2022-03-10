@@ -45,6 +45,16 @@ const getTasks = JSON.stringify(tasks);
     }
 }
 
+/**
+ * ---------------------------------------------------
+ * Sauvegarde la donnée json dans le fichier data.json
+ * @param {*} tasks 
+ * ----------------------------------------------------
+ */
+ const saveTask = function(tasks) {
+    const dataJSON = JSON.stringify(tasks);
+    fs.writeFileSync('./donnees/data.json', dataJSON);
+}
 
 //Appel pour une création automatique du fichier data.json
 setupData();
