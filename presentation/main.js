@@ -32,3 +32,82 @@ function menu() {
     console.log("\n 4 ║══> Quitter le programme\n");
 
 }
+
+rl.on('line', (num) => {
+
+    console.log(chalk.blue(`You choose: ${num}`));
+
+    switch (num) {
+
+        case "1":
+            task.showTasks();
+            rl.question("\nBack to menu? (Y/N)", function(res) {
+                if (`${res}` === 'Y') {
+                    menu();
+                }else{
+                    rl.close();
+                }
+               
+            });
+            break;
+
+        case "2":
+            
+            rl.question("\nEnter task Id : ", function(id) {
+                rl.question("Enter task name : ", function(label) {
+                    task.addTasks(`${id}`,`${label}`);
+                   
+                    rl.question("\n Back to menu? (Y/N)", function(res) {
+                        if (`${res}` === 'Y') {
+                            menu();
+                        }else{
+                            rl.close();
+                        }
+                       
+                    });
+                });
+            });
+            
+            break;
+
+        case "3":
+            
+            rl.question("\nEnter Id of the task you want to delete : ", function(id) {
+                task.removeTask(`${id}`);
+
+                rl.question("\nBack to menu? (Y/N)", function(res) {
+                    if (`${res}` === 'Y') {
+                        menu();
+                    }else{
+                        rl.close();
+                    }
+                   
+                });
+               
+            });
+
+            break;
+        case "4":
+
+            rl.close();
+
+            break;    
+
+        default:
+
+            console.log('Dont know what you want...')
+
+    }
+  
+
+});
+
+//event handle at close
+
+rl.on('close', function() {
+
+    console.log(chalk.yellow("BYE BYE !"));
+
+    process.exit(0);
+
+});
