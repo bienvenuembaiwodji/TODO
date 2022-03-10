@@ -146,3 +146,7 @@ const getTasks = JSON.stringify(tasks);
 
 //Appel pour une création automatique du fichier data.json
 setupData();
+
+//Exportation des fonctions  showTasks, addTasks et removeTask pour 
+//une utilisation dans d'autres fichiers. Ex: presentation/main.js
+export default{showTasks, addTasks,removeTask}
