@@ -74,6 +74,19 @@ const getTasks = JSON.stringify(tasks);
 }
 
 
+/**
+ * -----------------------------------------------------------
+ * Affiche toutes les tâches contenues contenues dans data.json
+ *  -----------------------------------------------------------
+ */
+ const showTasks = function() {
+
+    // const dataBuffer = fs.readFileSync('./donnees/data.json');
+    // const getBuffer = dataBuffer.toString();
+    // const get = JSON.parse(getBuffer);
+    const tasks = loadTasks();
+    view.viewRender(tasks);
+}
 
 /**
  * ---------------------------
