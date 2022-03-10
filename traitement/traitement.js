@@ -105,5 +105,31 @@ const getTasks = JSON.stringify(tasks);
     
 }
 
+
+/**
+ * -------------------------------------------------------------
+ * Supprime une tâche spécifique avec taskId passée en paramètre
+ * @param {*} taskId 
+ * -------------------------------------------------------------
+ */
+ const removeTask = function(taskId) {
+    
+    const tasks = loadTasks();
+    const getTasks = tasks.filter(function(checkTaskId) {
+        return checkTaskId._id !== taskId;
+    })
+    if (tasks.length > getTasks.length) {
+        saveTask(getTasks);
+
+        console.log(chalk.green.inverse('Task remove successfully!'));
+        //Affichage de la liste des tâche après suppression
+        const newTasks = loadTasks();
+        view.viewRender(newTasks);
+    } else {
+        console.log(chalk.red.inverse('No task found!'));
+    }
+}
+
+
 //Appel pour une création automatique du fichier data.json
 setupData();
