@@ -12,4 +12,8 @@ git colne https://github.com/bienvenuembaiwodji/TODO.git
 
 
 Etape 2: Installer les bibliothèques requises
+
+```
 npm install 
+```
+
