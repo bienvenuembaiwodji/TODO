@@ -17,3 +17,8 @@ Etape 2: Installer les bibliothèques requises
 npm install 
 ```
 
+Etape 3: Exécuter le programme 
+
+```
+npm start 
+```
