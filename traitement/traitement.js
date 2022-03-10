@@ -56,5 +56,22 @@ const getTasks = JSON.stringify(tasks);
     fs.writeFileSync('./donnees/data.json', dataJSON);
 }
 
+/**
+ * -------------------------------------------------------
+ * Récupère les tâches contenues dans le fichier data.js
+ * @returns 
+ *  -------------------------------------------------------
+ */
+ const loadTasks = function() {
+    try {
+        const dataBuffer = fs.readFileSync('./donnees/data.json');
+        const dataJSON = dataBuffer.toString();
+        return JSON.parse(dataJSON);
+
+    } catch (e) {
+        return [];
+    }
+}
+
 //Appel pour une création automatique du fichier data.json
 setupData();
