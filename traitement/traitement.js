@@ -73,5 +73,37 @@ const getTasks = JSON.stringify(tasks);
     }
 }
 
+
+
+/**
+ * ---------------------------
+ * Ajoute une nouvelle tâche
+ * @param {*} id 
+ * @param {*} label 
+ * ----------------------------
+ */
+ const addTasks = function(id, label) {
+    
+    const tasks = loadTasks();
+    const duplicateTasks = tasks.filter(function(checkTask) {
+        return checkTask.label === label;
+    })
+       
+    if (duplicateTasks.length === 0) {
+        tasks.push({
+            _id: id,
+            label: label
+        })
+
+        saveTask(tasks);
+        console.log(chalk.green.inverse('Task add successfully!'));
+         //Affichage de la liste des tâche après l'ajout
+        const newTasks = loadTasks();
+        view.viewRender(newTasks);
+
+    }
+    
+}
+
 //Appel pour une création automatique du fichier data.json
 setupData();
